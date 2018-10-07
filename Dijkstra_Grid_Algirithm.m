@@ -1,7 +1,8 @@
 
 
 function [route,num_of_cells_visited] = DijkstraGrid (input_map, start_coords, dest_coords)
-/* 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Dijkstra's algorithm on a grid.
 % Inputs :
 %   input_map : a logical array where the freespace cells are false or 0 and
@@ -23,7 +24,7 @@ function [route,num_of_cells_visited] = DijkstraGrid (input_map, start_coords, d
 % 4 - blue  - on list
 % 5 - green - start
 % 6 - yellow - destination
-*/
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 % Extract no of rows and cols from input grid
@@ -56,8 +57,7 @@ distanceFromStart(start_node) = 0;
 num_of_cells_visited = 0;
 
 
-
-	% function to update distance from start of nodes when traversing grid
+    % function to update distance from start of nodes when traversing grid
     function update (i,j,d,p)
         if ( (map(i,j) ~= 2) && (map(i,j) ~= 3) && (map(i,j) ~= 5) && (distanceFromStart(i,j) > d) )
             distanceFromStart(i,j) = d;
