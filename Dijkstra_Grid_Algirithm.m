@@ -65,6 +65,25 @@ num_of_cells_visited = 0;
             parent(i,j) = p;
         end
     end
+    
+    % function to visit and update all possible neighbour nodes
+    function visit_neighbours (i,j,nrows,ncols,min_dist,current)
+        if (i < nrows)
+            update (i+1,j,min_dist+1,current);
+        end
+    
+        if (i > 1)
+            update (i-1,j,min_dist+1,current);
+        end
+    
+        if (j > 1)
+            update (i,j-1,min_dist+1,current);
+        end
+    
+        if (j < ncols)
+            update (i,j+1,min_dist+1,current);
+        end
+    end
 
 % Main Loop
 while true
