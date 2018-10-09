@@ -67,7 +67,7 @@ num_of_cells_visited = 0;
     end
     
     % function to visit and update all possible neighbour nodes
-    function visit_neighbours (i,j,nrows,ncols,min_dist,current)
+    function visit_and_update_neighbours (i,j,nrows,ncols,min_dist,current)
         if (i < nrows)
             update (i+1,j,min_dist+1,current);
         end
