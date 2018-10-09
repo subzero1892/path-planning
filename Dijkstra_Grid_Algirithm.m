@@ -106,6 +106,7 @@ while true
 
     % Visit each neighbor of the current node and update the map, distances
     % and parent tables appropriately.   
+    visit_and_update_neighbours (i,j,nrows,ncols,min_dist,current);
 
     num_of_cells_visited = num_of_cells_visited + 1;
         
